@@ -35,9 +35,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.35, random
 from sklearn.ensemble import RandomForestRegressor
 rfc = RandomForestRegressor(n_estimators = 100,random_state = 0)
 rfc.fit(X_train, y_train)
-import pickle
-file = open('employee_burnout_rf.pkl', 'wb')
-pickle.dump(rfc, file)
+#import pickle
+#file = open('employee_burnout_rf.pkl', 'wb')
+#pickle.dump(rfc, file)
 #model = pickle.load(open("employee_burnout_rf.pkl", "rb"))
 #employee_b = pickle.load(model)
 
