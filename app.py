@@ -71,8 +71,10 @@ def burnout():
 
         # Date_of_Joining
         Date_of_Joining = request.form["Date of Joining"]
-        Joining_day=int(pd.to_datetime(Date_of_Joining,format="%Y-%m-%d").day)
-        Joining_month=int(pd.to_datetime(Date_of_Joining,format="%Y-%m-%d").month)
+        Date_of_Joining_date = Date_of_Joining.split("T")[0]
+        join_date = pd.to_datetime(Date_of_Joining_date, format="%Y-%m-%d")
+        Joining_day = join_date.day
+        Joining_month = join_date.month
 
         Gender=request.form['Gender']
         if(Gender=='Male'):
@@ -113,7 +115,7 @@ def burnout():
         Company_Type_Service, WFH_Setup_Available_No,
         WFH_Setup_Available_Yes
         ]])
-        #print(prediction)
+        print(prediction)
 
         output=round(prediction[0],2)
         #print(output)
